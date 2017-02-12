@@ -18,3 +18,12 @@ ssh -o PreferredAuthentications=password user@x.x.x.x
 ssh -i ~/.ssh/id_rsa -o IdentitiesOnly=yes user@x.x.x.x
 ```
 
+### Add SSH key to ssh-agent
+```bash
+eval "$(ssh-agent -s)"
+```
+
+```bash
+ssh-add ~/.ssh/id_rsa
+```
+
