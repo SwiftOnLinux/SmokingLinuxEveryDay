@@ -2,5 +2,6 @@
 Smoking Linux Every Day!
 
 ### Contents
-* archive: archive notes and scripts
+* debian: notes and scripts tested on debian
+
 
