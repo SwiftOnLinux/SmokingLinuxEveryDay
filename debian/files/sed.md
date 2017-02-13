@@ -15,6 +15,7 @@ sed -i '/SearchPattern/athis is a new line' /path/to/file/name
 ```
 
 ### Add string between strings (using groups)
+*e.g. "string1 string2" --> "string1 string3 string2"*
 ```bash
 sed -i 's/\(string1\)\(.*string2\)/\1 string3 \2/' /path/to/file/name
 ```
