@@ -15,12 +15,12 @@ scp -o PreferredAuthentications=password ~/path/to/file/name user@x.x.x.x:/home/
 
 ### Upload folder
 ```bash
-scp -r /path/to/save/folder user@x.x.x.x:/home/user/path/to/folder
+scp -r /path/to/folder user@x.x.x.x:/home/user/path/to/folder
 ```
 
 ### Upload folder - specify authentication
 ```bash
-scp -o PreferredAuthentications=password -r /path/to/save/folder user@x.x.x.x:/home/user/path/to/folder
+scp -o PreferredAuthentications=password -r /path/to/folder user@x.x.x.x:/home/user/path/to/folder
 ```
 
 ### Download one file
