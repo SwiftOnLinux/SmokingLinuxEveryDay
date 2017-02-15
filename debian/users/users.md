@@ -1,3 +1,8 @@
+### how many days ago the user password has been changed
+```bash
+echo $(( ( $(date -u '+%s') -  $(date -ud "$(passwd -S <username> | cut -d' ' -f3)" +'%s') )/60/60/24 )) days
+```
+
 ### Add user to group
 ```bash
 usermod -aG <group_name> <username>
