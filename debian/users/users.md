@@ -1,4 +1,4 @@
-### how many days ago the user password has been changed
+### days since last user password change
 ```bash
 echo $(( ( $(date -u '+%s') -  $(date -ud "$(passwd -S <username> | cut -d' ' -f3)" +'%s') )/60/60/24 )) days
 ```
