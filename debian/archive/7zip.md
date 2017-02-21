@@ -13,6 +13,11 @@ sudo apt-get install p7zip-full
 7z a -r myfile.7z folder_name/
 ```
 
+### 7z Compress folder - Exclude hidden
+```bash
+7z a -xr'!.*' myfile.7z folder_name/
+```
+
 ### 7z Compress file - Password protected
 ```bash
 7z a -p myfile.7z myfile.pdf
@@ -21,6 +26,11 @@ sudo apt-get install p7zip-full
 ### 7z Compress folder - Password protected
 ```bash
 7z a -p -r myfile.7z folder_name/
+```
+
+### 7z Compress folder - Password protected - Exclude hidden
+```bash
+7z a -p -xr'!.*' myfile.7z folder_name/
 ```
 
 ### 7z Extract archive contents
