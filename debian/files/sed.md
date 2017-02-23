@@ -22,11 +22,11 @@ sed -i 's/\(string1\)\(.*string2\)/\1 string3 \2/' /path/to/file/name
 
 ### Comment line containing specific string
 ```bash
-sed -i '/SearchPattern/s/^/#/g' file
+sed -i '/SearchPattern/s/^/#/g' /path/to/file/name
 ```
 
 ### Uncomment line containing specific string
 ```bash
-sed -i '/SearchPattern/s/^#//g' file
+sed -i '/SearchPattern/s/^#//g' /path/to/file/name
 ```
 
