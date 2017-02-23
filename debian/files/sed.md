@@ -20,4 +20,13 @@ sed -i '/SearchPattern/athis is a new line' /path/to/file/name
 sed -i 's/\(string1\)\(.*string2\)/\1 string3 \2/' /path/to/file/name
 ```
 
+### Comment line containing specific string
+```bash
+sed -i '/SearchPattern/s/^/#/g' file
+```
+
+### Uncomment line containing specific string
+```bash
+sed -i '/SearchPattern/s/^#//g' file
+```
 
