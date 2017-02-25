@@ -55,4 +55,33 @@ echo "" >> /etc/profile
 echo "ulimit -S -c 0 > /dev/null 2>&1" >> /etc/profile
 ```
 
+### Install i386 packages
+```bash
+dpkg --add-architecture i386 && apt-get update 
+```
+
+### Show what archs we have installed
+```bash
+dpkg --print-foreign-architectures
+```
+
+### Remove all i386 packages
+```bash
+apt-get remove -f --purge ".*:i386"
+```
+
+### Remove i386 architecture
+```bash
+dpkg --remove-architecture i386 && apt-get update
+```
+
+### List dependencies of a package
+```bash
+apt depends {PACKAGE}
+```
+
+### List reverse dependencies
+```bash
+apt rdepends {PACKAGE}
+```
 
