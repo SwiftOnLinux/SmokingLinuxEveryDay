@@ -45,4 +45,14 @@ apt -y full-upgrade
 echo $(( ( $(date -u '+%s') -  $(stat -c %Y /var/cache/apt/) )/60/60/24 ))
 ```
 
+### Disable core dumps
+```bash
+echo "" >> /etc/sysctl.conf
+echo "fs.suid_dumpable=0" >> /etc/sysctl.conf
+echo "" >> /etc/security/limits.conf
+echo "*     hard   core    0" >> /etc/security/limits.conf
+echo "" >> /etc/profile
+echo "ulimit -S -c 0 > /dev/null 2>&1" >> /etc/profile
+```
+
 

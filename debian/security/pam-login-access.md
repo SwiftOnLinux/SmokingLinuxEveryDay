@@ -27,6 +27,15 @@ sed -i "s/\bpam_cracklib.so\b/& minclass=3/" /etc/pam.d/common-password
 sed -i "s/\bminclass=3\b/& maxrepeat=2/" /etc/pam.d/common-password
 sed -i "s/\bpam_unix.so\b/& remember=24/" /etc/pam.d/common-password
 sed -i "s/\bpam_unix.so\b/& minlen=12/" /etc/pam.d/common-password
+```
 
+### Max days a password may be used
+```bash
+sed -i "s/^PASS_MAX_DAYS.*/PASS_MAX_DAYS   40/" /etc/login.defs
+```
+
+### Use password aging on existing users
+```bash
+chage -m 0 -M 40 myuser
 ```
 
