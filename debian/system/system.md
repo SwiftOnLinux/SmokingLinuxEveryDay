@@ -1,4 +1,4 @@
-### check if command is available
+### Check if command is available
 ```bash
 command -v command_name >/dev/null && return 0 || { return 1; }
 ```
