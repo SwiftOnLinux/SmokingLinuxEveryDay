@@ -40,7 +40,7 @@ apt update
 apt -y full-upgrade
 ```
 
-### days since last system update (sort of)
+### Days since last system update (sort of)
 ```bash
 echo $(( ( $(date -u '+%s') -  $(stat -c %Y /var/cache/apt/) )/60/60/24 ))
 ```
