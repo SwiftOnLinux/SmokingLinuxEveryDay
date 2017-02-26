@@ -18,6 +18,11 @@ groupadd <group_name>
 useradd -m <username>
 ```
 
+### Create new user with home dir, add to group and assign bash shell
+```bash
+useradd -m -G <group> -s /bin/bash <username>
+```
+
 ### Change user password
 ```bash
 echo "$username:$newpassword" | chpasswd
