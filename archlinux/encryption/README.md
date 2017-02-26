@@ -1,5 +1,5 @@
 ## encryption
 
 ### Contents
-* [dropbear](dropbear.md): openssl notes
+* [dropbear](dropbear.md): dropbear notes
 
