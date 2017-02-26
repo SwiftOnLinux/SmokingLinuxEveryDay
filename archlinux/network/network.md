@@ -1,6 +1,6 @@
 ### Static IP address with systemd
 
-### Create file at /etc/conf.d/net-conf-eth0
+#### Create file at /etc/conf.d/net-conf-eth0
 ```bash
 address=192.168.1.94
 netmask=24
@@ -8,7 +8,7 @@ broadcast=192.168.1.255
 gateway=192.168.1.254
 ```
 
-### Create script at /usr/local/bin/net-up.sh
+#### Create script at /usr/local/bin/net-up.sh
 ```bash
 #!/bin/bash
 ip link set dev "$1" up
@@ -19,7 +19,7 @@ ip addr add ${address}/${netmask} broadcast ${broadcast} dev "$1"
 }
 ```
 
-### Create script at /usr/local/bin/net-down.sh
+#### Create script at /usr/local/bin/net-down.sh
 
 ```bash
 #!/bin/bash
@@ -28,12 +28,12 @@ ip route flush dev "$1"
 ip link set dev "$1" down
 ```
 
-### Make them executable
+#### Make them executable
 ```bash
 chmod +x /usr/local/bin/net-{up,down}.sh
 ```
 
-### Create systemd service file at /etc/systemd/system/network@.service
+#### Create systemd service file at /etc/systemd/system/network@.service
 ```bash
 [Unit]
 Description=Network connectivity (%i)
@@ -53,7 +53,7 @@ ExecStop=/usr/local/bin/net-down.sh %i
 WantedBy=multi-user.target
 ```
 
-### Start and enable service
+#### Start and enable service
 ```bash
 systemctl start network@eth0
 systemctl enable network@eth0
