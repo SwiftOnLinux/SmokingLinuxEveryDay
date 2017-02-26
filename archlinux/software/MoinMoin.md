@@ -10,6 +10,7 @@ chown -R http:http /var/lib/moin/
 vim /var/lib/moin/uwsgi.ini
 ```
 
+```bash
 ## CONF FILE STARTS ##
 [uwsgi]
 socket = /run/uwsgi/moin.sock
@@ -25,6 +26,7 @@ max-requests = 200
 harakiri = 60
 die-on-term
 ## CONF FILE ENDS ##
+```
 
 ```bash
 uwsgi --uid 33 --gid 33 --ini /var/lib/moin/uwsgi.ini 
@@ -41,6 +43,7 @@ vim /etc/nginx/nginx.conf
 
 ### Add the following at the server field
 
+```bash
 ## CONF FILE STARTS ##
 server {
    listen       80;
@@ -60,11 +63,13 @@ server {
    }
 }
 ## CONF FILE ENDS ##
+```
 
 ```bash
 vim /etc/systemd/system/moinmoin.service
 ```
 
+```bash
 ## CONF FILE STARTS ##
 [Unit]
 Description=Start uwsgi for moinmoin wiki
@@ -78,6 +83,7 @@ ExecStart=/usr/bin/uwsgi --uid 33 --gid 33 --ini /var/lib/moin/uwsgi.ini
 [Install]
 WantedBy=multi-user.target
 ## CONF FILE ENDS ##
+```
 
 ```bash
 systemctl enable nginx
