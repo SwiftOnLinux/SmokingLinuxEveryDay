@@ -1,10 +1,10 @@
-### revoke a certificate
+### Revoke a certificate
 ```bash
 ./revoke-full CERTUSERNAME
 ```
 
-*this command should return an "error 23 at 0 depth lookup:certificate revoked"*
-*if the above doesn't work run* 
+* *this command should return an "error 23 at 0 depth lookup:certificate revoked"*
+* *if the above doesn't work run:* 
 
 ```bash
 source ./vars
