@@ -2,7 +2,8 @@
 Smoking Linux Every Day!
 
 ### Contents
-* **date-time**: *various software installation guides.*
-* **network**: *various software installation guides.*
+* **date-time**: *date-time notes and scripts.*
+* **encryption**: *encryption notes and scripts.*
+* **network**: *network notes and scripts.*
 * **software**: *various software installation guides.*
 
