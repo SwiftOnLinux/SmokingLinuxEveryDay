@@ -27,3 +27,7 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 ```
 
+### Add SSH key to ssh-agent permanently
+```bash
+ssh-add -k ~/.ssh/id_rsa
+```
