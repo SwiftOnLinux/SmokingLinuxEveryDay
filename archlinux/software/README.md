@@ -1,7 +1,5 @@
-## SmokingLinuxEveryDay
-Smoking Linux Every Day!
+## archive 
 
 ### Contents
-* **MoinMoin**: *MoinMoin installation guide.*
-
+* [MoinMoin](MoinMoin.md): MoinMoin installation guide
 
