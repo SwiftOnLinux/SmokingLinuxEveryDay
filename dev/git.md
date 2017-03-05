@@ -31,4 +31,16 @@ e.g.
 	ignore = dirty
 ```
 
+### Remove submodule
+```bash
+git submodule deinit openssl
+git rm openssl
+rm -rf .git/modules/openssl
+rm -rf openssl
+```
+
+* Remove the submodule’s entry in the .gitmodules file. If any.
+* Remove the submodule’s entry in the .git/config. If any.
+
+
 
