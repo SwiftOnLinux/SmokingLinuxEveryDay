@@ -1,3 +1,8 @@
+### To create a branch and switch to it at the same time
+```bash
+git checkout -b develop
+```
+
 ### Adding Submodules to a Git Repository
 ```bash
 git submodule add git@github.com:openssl/openssl.git
