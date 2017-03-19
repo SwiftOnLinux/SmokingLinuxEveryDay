@@ -67,4 +67,29 @@ pacman -Qeq | pacman -S -
 pacman -Qdq | pacman -S --asdeps -
 ```
 
+### System Setup Info - Utilities
+```bash
+pacman -S openssh htop linux-lts mlocate
+```
+
+```bash
+pacman -Rsn linux
+```
+
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+```bash
+pacman -S linux
+```
+
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+```bash
+updatedb
+```
+
 
