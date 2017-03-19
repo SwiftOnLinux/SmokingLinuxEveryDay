@@ -59,4 +59,12 @@ systemctl start network@eth0
 systemctl enable network@eth0
 ```
 
+### TCPDUMP
+
+* Sniff HTTP traffic for a specific host
+
+```bash
+tcpdump -i tun0 -A -s 0 'src example.com and tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'
+```
+
 
