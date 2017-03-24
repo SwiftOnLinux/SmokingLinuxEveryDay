@@ -8,6 +8,7 @@ Smoking Linux Every Day!
 * **encryption**: *encryption related notes and scripts.*
 * **files**: *archive files management related notes and scripts.*
 * **fun**: *fun stuff notes and scripts.*
+* **installation**: *installation related notes and scripts.*
 * **network**: *network related notes and scripts.*
 * **remote-login**: *remote-login related notes and scripts.*
 * **security**: *security related notes and scripts.*
