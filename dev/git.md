@@ -66,4 +66,9 @@ git add .
 git commit -m "Remove ignored files"
 ```
 
+### View the change history of a file
+```bash
+git log --follow -p -- <filename>
+```
+
 
