@@ -15,6 +15,10 @@ rsync --exclude='*.swp' --exclude='.gitignore' --exclude='.git/' --rsh="/usr/bin
 
 ### Backup
 ```bash
+rsync -r -t -v --progress --delete -s /home/user/foldername /media/user/backup_disk/
+```
+
+```bash
 rsync --exclude=*.vdi -av -h --progress SOURCE DESTINATION #(without tr /)
 ```
 
