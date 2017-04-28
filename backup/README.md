@@ -2,5 +2,5 @@
 
 ### Contents
 * [websites](websites.md): websites backup notes
-* [incremental backups](incremental-backups.md): incremental backups using tar notes
+* [backups](backups.md): backups using tar notes
 
