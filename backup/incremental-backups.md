@@ -1,3 +1,8 @@
+### Create Full Backup
+```bash
+tar -zcvpf backup-filename-`date '+%Y-%m-%d-%H.%M'`.tar.gz /path/to/my/data/
+```
+
 ### Create incremental backups
 
 ```bash
@@ -23,4 +28,8 @@ tar -zxvf backup-filename.1.tar.gz -g /dev/null
 ```bash
 tar -zxvf backup-filename.2.tar.gz -g /dev/null 
 ```
+
+### Keep last 3 backups
+ls -tdp /path/to/backups/*.tar.gz | grep -v '/$' | tail -n +4 | xargs -I {} rm -- {}
+
 
