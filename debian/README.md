@@ -3,6 +3,7 @@ Smoking Linux Every Day!
 
 ### Contents
 * **archive**: *archiving related notes and scripts.*
+* **cronjobs**: *various cronjobs notes and scripts.*
 * **date-time**: *date-time related notes and scripts.*
 * **dev**: *programming related notes and scripts.*
 * **encryption**: *encryption related notes and scripts.*
