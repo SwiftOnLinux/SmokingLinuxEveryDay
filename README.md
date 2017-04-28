@@ -7,6 +7,7 @@ Smoking Linux Every Day!
 * **database**: *notes and scripts about databases, working on all distributions*
 * **debian**: *notes and scripts tested on debian*
 * **dev**: *development notes and scripts, working on all distributions*
+* **documents**: *notes and scripts about documents, working on all distributions*
 * **exploitation**: *exploitation related notes and scripts, working on all distributions*
 * **gentoo**: *notes and scripts tested on gentoo*
 * **misc**: *miscellaneous notes and scripts, working on all distributions*
