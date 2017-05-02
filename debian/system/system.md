@@ -85,3 +85,10 @@ apt depends {PACKAGE}
 apt rdepends {PACKAGE}
 ```
 
+### Change hostname
+```bash
+nano /etc/hostname
+nano /etc/hosts
+reboot now
+```
+
