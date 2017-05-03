@@ -1,5 +1,4 @@
-## SmokingLinuxEveryDay
-Smoking Linux Every Day!
+## Debian
 
 ### Contents
 * **archive**: *archiving related notes and scripts.*
