@@ -12,6 +12,7 @@ Smoking Linux Every Day!
 * **gentoo**: *notes and scripts tested on gentoo*
 * **misc**: *miscellaneous notes and scripts, working on all distributions*
 * **openvpn**: *notes and scripts about openvpn, working on all distributions*
+* **samuraistfu** *notes and scripts tested on samuraistfu*
 * **security**: *security related notes and scripts, working on all distributions*
 
 
