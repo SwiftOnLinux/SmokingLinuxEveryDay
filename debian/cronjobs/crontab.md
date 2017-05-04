@@ -8,3 +8,7 @@
 * */12 * * * /path/to/filename.sh
 ```
 
+### Run once, daily at 8pm
+```bash
+0 20 * * * /path/to/filename.sh
+```
