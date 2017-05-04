@@ -30,6 +30,8 @@ tar -zxvf backup-filename.2.tar.gz -g /dev/null
 ```
 
 ### Keep last 3 backups
-ls -tdp /path/to/backups/*.tar.gz | grep -v '/$' | tail -n +4 | xargs -I {} rm -- {}
 
+```bash
+ls -tdp /path/to/backups/*.tar.gz | grep -v '/$' | tail -n +4 | xargs -I {} rm -- {}
+```
 
