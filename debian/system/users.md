@@ -8,6 +8,26 @@ echo $(( ( $(date -u '+%s') -  $(date -ud "$(passwd -S <username> | cut -d' ' -f
 usermod -aG <group_name> <username>
 ```
 
+### List user groups
+```bash
+groups <username>
+```
+
+### Change user password
+```bash
+passwd <username>
+```
+
+### Impersonate user
+```bash
+su - <username>
+```
+
+### Change user defaut bash
+```bash
+chsh -s /bin/bash <username>
+```
+
 ### Create new users group
 ```bash
 groupadd <group_name>
