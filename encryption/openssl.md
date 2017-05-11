@@ -116,4 +116,15 @@ openssl x509 -text -noout -in <filename-crt>
 openssl x509 -noout -modulus -in <filename-crt>
 ```
 
+### Client-side SSL
+```bash
+openssl genrsa -out <user-name>.key 2048
+openssl req -new -key <user-name>.key -out <user-name>.req
+openssl x509 -req -in <user-name>.req -CA ca.cer -CAkey ca.key -set_serial 110 -extensions client -days 365 -outform PEM -out <user-name>.cer
+openssl pkcs12 -export -inkey <user-name>.key -in <user-name>.cer -out <user-name>.p12
+rm <user-name>.key <user-name>.cer <user-name>.req
+cp <user-name>.p12 /home/<user-name>/myfolder/
+chown <user-name>: /home/<user-name>/myfolder/<user-name>.p12
+```
+
 
