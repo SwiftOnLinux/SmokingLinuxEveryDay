@@ -6,7 +6,6 @@
 * **date-time**: *date-time related notes and scripts.*
 * **dev**: *programming related notes and scripts.*
 * **documents**: *documents related notes and scripts.*
-* **encryption**: *encryption related notes and scripts.*
 * **files**: *archive files management related notes and scripts.*
 * **fun**: *fun stuff notes and scripts.*
 * **installation**: *installation related notes and scripts.*
