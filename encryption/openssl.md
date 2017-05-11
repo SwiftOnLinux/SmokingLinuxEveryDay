@@ -1,5 +1,20 @@
 ### Generate a New CSR and Key
 ```bash
+openssl genrsa -out server.key 2048
+```
+
+### Generate Certificate Signing Request in PKCS#10 format
+```bash
+openssl req -new -key server.key -out server.req
+```
+
+### Convert CER to ascii(crt)
+```bash
+openssl x509 -inform DER -in subdomain.twelvesec.int.cer -out subdomain.twelvesec.int.crt
+```
+
+### Generate a New CSR and Key
+```bash
 openssl req -nodes -new -newkey rsa:<number of bits> -out <filename-csr> -keyout <filename-key>
 ```
 
