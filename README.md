@@ -16,5 +16,5 @@ Smoking Linux Every Day!
 * **openvpn**: *notes and scripts about openvpn, working on all distributions*
 * **samuraistfu** *notes and scripts tested on samuraistfu*
 * **security**: *security related notes and scripts, working on all distributions*
-
+* **web**: *web related notes and scripts, working on all distributions*
 
