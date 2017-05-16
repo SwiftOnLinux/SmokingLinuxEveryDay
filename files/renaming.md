@@ -12,4 +12,3 @@ find -name "* *" -type f | rename -v 's/ /-/g'
 find -name "*_*" -type f | rename -v 's/_/-/g'
 ```
 
-
