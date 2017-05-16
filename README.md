@@ -10,7 +10,6 @@ Smoking Linux Every Day!
 * **dev**: *development notes and scripts, working on all distributions*
 * **documents**: *notes and scripts about documents, working on all distributions*
 * **encryption**: *encryption related notes and scripts, working on all distributions*
-* **exploitation**: *exploitation related notes and scripts, working on all distributions*
 * **gentoo**: *notes and scripts tested on gentoo*
 * **misc**: *miscellaneous notes and scripts, working on all distributions*
 * **openvpn**: *notes and scripts about openvpn, working on all distributions*
