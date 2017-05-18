@@ -17,7 +17,7 @@ sudo dpkg -i sublime-text_build-xxxx_amd64.deb
 * [camingocode font](https://www.fontsquirrel.com/fonts/camingocode)
 
 ```bash
-sudo cp -r /home/john/Downloads/camingocode /usr/local/share/
+sudo cp -r /home/<username>/Downloads/camingocode /usr/local/share/
 sudo fc-cache -fv
 ```
 
