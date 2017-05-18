@@ -2,7 +2,7 @@
 
 ### Contents
 
-* [file](file.md): files notes
+* [files](files.md): files notes
 * [find](find.md): find notes
 * [help](help.md): files notes
 * [sed](sed.md): sed notes
