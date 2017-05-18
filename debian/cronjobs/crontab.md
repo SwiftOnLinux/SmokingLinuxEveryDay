@@ -12,3 +12,8 @@
 ```bash
 0 20 * * * /path/to/filename.sh
 ```
+
+### Run every day at 10am, except Saturday and Sunday
+```bash
+0 10 * * 1,2,3,4,5 /path/to/filename.sh
+```
