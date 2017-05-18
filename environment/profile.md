@@ -18,3 +18,14 @@ export PATH=$PATH:/path/to/my/folder
 source ~/.profile
 ```
 
+### Include ~/.bin in $PATH
+
+```bash
+nano ~/.zprofile
+```
+
+```bash
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+```
