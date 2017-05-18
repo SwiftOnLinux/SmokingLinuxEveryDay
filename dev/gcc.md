@@ -28,4 +28,13 @@ gcc -m64 -o myapp myapp.c
 ```bash
 gcc -g -o myapp myapp.c
 ```
+or
+```bash
+gcc -ggdb -o myapp myapp.c
+```
 
+* radare2 can work with this debugging information.
+
+```bash
+gcc -gdwarf -o myapp myapp.c
+```
