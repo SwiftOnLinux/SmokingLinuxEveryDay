@@ -37,3 +37,11 @@ sudo fc-cache -fv
 * [package control](https://packagecontrol.io/installation#st3)
 
 * Preferences -> Package Control
+
+### Disable 'Remember Open Files'
+
+* Preferences -> Settings -> 
+```json
+"remember_open_files": false,
+"hot_exit": false,
+```
