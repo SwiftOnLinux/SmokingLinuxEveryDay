@@ -71,21 +71,22 @@ openssl req -config myssl.conf -nodes -new -newkey rsa:4096 -out subdomain.examp
 [req]
 default_bits       = 2048
 distinguished_name = req_distinguished_name
-req_extensions     = req_ext
+req_extensions     = v3_req
+prompt = no
 
-[req_distinguished_name]
+[ req_distinguished_name ]
 countryName			= Country Name (2 letter code)
 countryName_default		= GR
 countryName_min			= 2
 countryName_max			= 2
 stateOrProvinceName		= State or Province Name (full name)
-stateOrProvinceName_default	= MyProvinceName
+stateOrProvinceName_default	= Attiki
 localityName			= Locality Name (eg, city)
-localityName_default	= MyCityName
+localityName_default	= Athens
 0.organizationName		= Organization Name (eg, company)
 0.organizationName_default	= MyCompany
 organizationalUnitName		= Organizational Unit Name (eg, section)
-organizationalUnitName_default	= MySection
+organizationalUnitName_default	= Operations
 commonName			= Common Name (eg, YOUR name)
 commonName_default  = subdomain.example.com
 commonName_max		= 64
@@ -93,12 +94,13 @@ emailAddress			= Email Address
 emailAddress_default	= info@example.com
 emailAddress_max		= 40
 
-[req_ext]
+[ v3_req ]
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 subjectAltName = @alt_names
 
-[alt_names]
-DNS.1   = ns1.example.com
-DNS.2   = ns2.example.com
+[ alt_names ]
+DNS.1   = subdomain.example.com
 ```
 
 ### Read a CSR
