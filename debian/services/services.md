@@ -1,6 +1,11 @@
+### Enable service on boot
+```bash
+update-rc.d <service_name> enable
+```
+
 ### Disable service on boot
 ```bash
-update-rc.d virtualbox disable
+update-rc.d <service_name> disable
 ```
 
 ### List all services
