@@ -16,3 +16,10 @@ fdupes /path/to/folder
 ```bash
 grep -lir 'string_value' ./ |xargs gedit
 ```
+
+### Locate
+```bash
+updatedb
+locate <filename>
+mlocate <filename>
+```
