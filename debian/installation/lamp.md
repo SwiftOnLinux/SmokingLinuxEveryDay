@@ -25,7 +25,7 @@ sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt php5-mysql php-gettext
 
 ### PHPMyAdmin
 ```bash
-sudo apt-get phpmyadmin
+sudo apt-get install phpmyadmin
 ```
 
 ### Restart Apache2
