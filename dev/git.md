@@ -71,4 +71,10 @@ git commit -m "Remove ignored files"
 git log --follow -p -- <filename>
 ```
 
+### git pull over all subdirectories
+
+```bash
+find . -mindepth 1 -maxdepth 1 -type d -exec git --git-dir={}/.git --work-tree=$PWD/{} pull origin master \;
+```
+
 
