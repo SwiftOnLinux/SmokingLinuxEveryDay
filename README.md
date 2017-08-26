@@ -2,10 +2,9 @@
 Smoking Linux Every Day!
 
 ### Contents
-* **apache**: *apache related notes and scripts, working on all distributions*
 * **archlinux**: *notes and scripts tested on archlinux*
 * **backup**: *backup related notes and scripts, working on all distributions*
-* **database**: *notes and scripts about databases, working on all distributions*
+* **databases**: *databases related notes and scripts*
 * **debian**: *notes and scripts tested on debian*
 * **dev**: *development notes and scripts, working on all distributions*
 * **documents**: *notes and scripts about documents, working on all distributions*
@@ -20,4 +19,4 @@ Smoking Linux Every Day!
 * **security**: *security related notes and scripts, working on all distributions*
 * **system**: *system related notes and scripts, working on all distributions*
 * **web**: *web related notes and scripts, working on all distributions*
-
+* **web-servers**: *web servers related notes and scripts*
