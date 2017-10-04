@@ -16,3 +16,15 @@ grant all privileges on mydatabase.* to 'username'@'%';
 exit
 ```
 
+### Reset mysql root password
+
+```bash
+sudo systemctl stop mysql
+sudo mysqld_safe --skip-grant-tables --skip-networking &
+mysql -u root
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
+FLUSH PRIVILEGES;
+sudo kill `cat /var/run/mysqld/mysqld.pid`
+sudo systemctl start mysql
+```
+
