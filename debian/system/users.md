@@ -1,4 +1,4 @@
-### days since last user password change
+### Days since last user password change
 
 ```bash
 echo $(( ( $(date -u '+%s') -  $(date -ud "$(passwd -S <username> | cut -d' ' -f3)" +'%s') )/60/60/24 )) days
@@ -61,13 +61,13 @@ echo "$username:$newpassword" | chpasswd
 ### Check if group exists
 
 ```bash
-    grep -q "group_name" /etc/group; echo $?
+grep -q "group_name" /etc/group; echo $?
 ```
 
 ### Check if user exists
 
 ```bash
-    id -u <username> 1>/dev/null 2>&-; echo $?
+id -u <username> 1>/dev/null 2>&-; echo $?
 ```
 
 ### Generate password
@@ -92,3 +92,4 @@ source ~/.bashrc
 ```bash
 apt-get install bash-completion
 ```
+
