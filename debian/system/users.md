@@ -87,3 +87,8 @@ alias grep='grep --color=auto'
 source ~/.bashrc
 ```
 
+### Bash Completion
+
+```bash
+apt-get install bash-completion
+```
