@@ -47,7 +47,7 @@ scp -o PreferredAuthentications=password -r <username>@example.com:/var/www/html
 
 ```bash
 rsync --rsh="/usr/bin/ssh -o PreferredAuthentications=password" -rtvs --progress --delete /var/www/html/myapp <username>@example.com:/var/www/html/
-sudo chown -R <username>:www-data /var/www/html/myapp
+chown -R <username>:www-data /var/www/html/myapp
 ```
 
 

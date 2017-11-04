@@ -2,7 +2,8 @@
 
 ```bash
 apt-get install apache2 -y
-rm -f /var/www/html/index.html && sudo touch /var/www/html/index.html
+rm -f /var/www/html/index.html
+touch /var/www/html/index.html
 a2enmod ssl
 a2ensite default-ssl
 service apache2 restart
