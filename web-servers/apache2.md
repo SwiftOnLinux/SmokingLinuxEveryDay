@@ -1,11 +1,11 @@
 ### Installation
 
 ```bash
-sudo apt-get install apache2 -y
-sudo rm -f /var/www/html/index.html && sudo touch /var/www/html/index.html
-sudo a2enmod ssl
-sudo a2ensite default-ssl
-sudo service apache2 restart
+apt-get install apache2 -y
+rm -f /var/www/html/index.html && sudo touch /var/www/html/index.html
+a2enmod ssl
+a2ensite default-ssl
+service apache2 restart
 ```
 
 ### Redirect to https

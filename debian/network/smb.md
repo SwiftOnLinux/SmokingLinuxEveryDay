@@ -1,6 +1,6 @@
 ### Samba password reset
 ```bash
-sudo smbpasswd -a <username>
+smbpasswd -a <username>
 ```
 
 

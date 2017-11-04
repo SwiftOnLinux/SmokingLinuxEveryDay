@@ -3,7 +3,7 @@
 * [Download](https://www.sublimetext.com/3)
 
 ```bash
-sudo dpkg -i sublime-text_build-xxxx_amd64.deb
+dpkg -i sublime-text_build-xxxx_amd64.deb
 ```
 
 ### Dracula Theme
@@ -17,8 +17,8 @@ sudo dpkg -i sublime-text_build-xxxx_amd64.deb
 * [camingocode font](https://www.fontsquirrel.com/fonts/camingocode)
 
 ```bash
-sudo cp -r /home/<username>/Downloads/camingocode /usr/local/share/
-sudo fc-cache -fv
+cp -r /home/<username>/Downloads/camingocode /usr/local/share/
+fc-cache -fv
 ```
 
 * Restart sublime if it is already open.

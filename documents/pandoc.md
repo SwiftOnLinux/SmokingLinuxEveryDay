@@ -1,7 +1,7 @@
 ### Packages
 
 ```bash
-sudo apt-get install texlive-latex-extra texlive-pictures
+apt-get install texlive-latex-extra texlive-pictures
 ```
 
 ### Convert Markdown file into a PDF document

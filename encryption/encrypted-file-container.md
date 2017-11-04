@@ -3,7 +3,7 @@
 ### Installations
 
 ```bash
-sudo apt-get install cryptsetup
+apt-get install cryptsetup
 ```
 
 ### Create an empty file with the size of your container
@@ -27,13 +27,13 @@ dd if=/dev/urandom of=mykey.key bs=1024 count=1
 ### Encrypting disk image file
 
 ```bash
-sudo cryptsetup -y luksFormat mycontainer.img
+cryptsetup -y luksFormat mycontainer.img
 ```
 
 or
 
 ```bash
-sudo cryptsetup luksFormat -d mykey.key mycontainer.img
+cryptsetup luksFormat -d mykey.key mycontainer.img
 ```
 
 ### Unlock/Open LUKS encrypted container
@@ -41,44 +41,44 @@ sudo cryptsetup luksFormat -d mykey.key mycontainer.img
 * creates a device file with the name /dev/mapper/myVolume
 
 ```bash
-sudo cryptsetup luksOpen mycontainer.img myVolume
+cryptsetup luksOpen mycontainer.img myVolume
 ```
 
 or
 
 ```bash
-sudo cryptsetup luksOpen mycontainer.img -d mykey.key myVolume
+cryptsetup luksOpen mycontainer.img -d mykey.key myVolume
 ```
 
 ### Create an ext4 filesystem on the decrypted LUKS container
 
 ```bash
-sudo mkfs.ext4 /dev/mapper/myVolume
+mkfs.ext4 /dev/mapper/myVolume
 ```
 
 ### Mount the device
 
 ```bash
 mkdir ~/myPrivData
-sudo mount /dev/mapper/myVolume ~/myPrivData
-sudo chown -R $USER ~/myPrivData
+mount /dev/mapper/myVolume ~/myPrivData
+chown -R $USER ~/myPrivData
 ```
 
 ### Unmount/close decrypted LUKS container
 
 ```bash
-sudo umount ~/myPrivData && sudo cryptsetup luksClose myVolume && rm -r ~/myPrivData
+umount ~/myPrivData && cryptsetup luksClose myVolume && rm -r ~/myPrivData
 ```
 
 ### Quickly Access Container
 
 ```bash
-sudo cryptsetup luksOpen mycontainer.img myVolume && mkdir ~/myPrivData && sudo mount /dev/mapper/myVolume ~/myPrivData
+cryptsetup luksOpen mycontainer.img myVolume && mkdir ~/myPrivData && mount /dev/mapper/myVolume ~/myPrivData
 ```
 
 or
 
 ```bash
-sudo cryptsetup luksOpen mycontainer2.img -d mykey.key myVolume && mkdir ~/myPrivData && sudo mount /dev/mapper/myVolume ~/myPrivData
+cryptsetup luksOpen mycontainer2.img -d mykey.key myVolume && mkdir ~/myPrivData && mount /dev/mapper/myVolume ~/myPrivData
 ```
 

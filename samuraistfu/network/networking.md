@@ -15,5 +15,5 @@ iface eth0 inet dhcp
 ```
 
 ```bash
-sudo /etc/init.d/networking restart
+/etc/init.d/networking restart
 ```

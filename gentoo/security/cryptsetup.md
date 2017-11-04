@@ -37,21 +37,21 @@ cryptsetup luksClose /dev/mapper/external01
 
 ### cryptestup quick mounting
 ```bash
-sudo cryptsetup luksOpen /dev/sdX1 external01
+cryptsetup luksOpen /dev/sdX1 external01
 ```
 
 ```bash
-sudo mount /dev/mapper/external01 /mnt/external
+mount /dev/mapper/external01 /mnt/external
 ```
 
 *DO YOUR WORK HERE*
 
 ```bash
-sudo umount /mnt/external
+umount /mnt/external
 ```
 
 ```bash
-sudo cryptsetup luksClose /dev/mapper/external01
+cryptsetup luksClose /dev/mapper/external01
 ```
 
 ### add/remove cryptestup keys luks password

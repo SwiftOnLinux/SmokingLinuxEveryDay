@@ -1,19 +1,23 @@
 ### Sync local and remote folder
+
 ```bash
 rsync --rsh="/usr/bin/ssh" -rtvs --progress --delete /local/path/to/folder user@example.com:/path/to/folder
 ```
 
 ### Sync local and remote folder - specify authentication
+
 ```bash
 rsync --rsh="/usr/bin/ssh -o PreferredAuthentications=password" -rtvs --progress --delete /local/path/to/folder user@example.com:/path/to/folder
 ```
 
 ### Usage Example
+
 ```bash
 rsync --exclude='*.swp' --exclude='.gitignore' --exclude='.git/' --rsh="/usr/bin/ssh -o PreferredAuthentications=password" -rtvs --progress --delete ~/work/project1 user@example.com:/home/user/work/
 ```
 
 ### Backup
+
 ```bash
 rsync -r -t -v --progress --delete -s /home/user/foldername /media/user/backup_disk/
 ```
@@ -27,13 +31,21 @@ rsync --exclude=*.vdi -av -h --progress /home/user/folder1 /home/user/folder2 /h
 ```
 
 ### Sync files /var/www/html/
+
 ```bash
-sudo usermod -aG www-data <username>
-sudo chown -R <username>:www-data /var/www/html/myapp
-sudo chmod -R 755 /var/www/html/myapp
-#download
+usermod -aG www-data <username>
+chown -R <username>:www-data /var/www/html/myapp
+chmod -R 755 /var/www/html/myapp
+
+### download
+
+```bash
 scp -o PreferredAuthentications=password -r <username>@example.com:/var/www/html/myapp ./
-#upload-sync
+```
+
+### upload-sync
+
+```bash
 rsync --rsh="/usr/bin/ssh -o PreferredAuthentications=password" -rtvs --progress --delete /var/www/html/myapp <username>@example.com:/var/www/html/
 sudo chown -R <username>:www-data /var/www/html/myapp
 ```

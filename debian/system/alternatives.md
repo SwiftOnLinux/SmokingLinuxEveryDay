@@ -1,13 +1,13 @@
 ### Add an application as a choice in update-alternatives
 
 ```bash
-sudo update-alternatives --install /usr/bin/editor editor /usr/bin/subl 100
+update-alternatives --install /usr/bin/editor editor /usr/bin/subl 100
 ```
 
 ### Remove an application from update-alternatives
 
 ```bash
-sudo update-alternatives --remove editor /usr/bin/subl
+update-alternatives --remove editor /usr/bin/subl
 ```
 
 ### Change default Editor
