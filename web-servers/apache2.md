@@ -34,7 +34,7 @@ RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
 <IfModule mod_rewrite.c>
 RewriteEngine on
 Options +FollowSymLinks
-RewriteRule ^$ /owncloud [L]
+RewriteRule ^$ /foldername [L]
 </IfModule>
 ```
 
