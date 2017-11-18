@@ -18,5 +18,6 @@ Smoking Linux Every Day!
 * **samuraistfu** *notes and scripts tested on samuraistfu*
 * **security**: *security related notes and scripts, working on all distributions*
 * **system**: *system related notes and scripts, working on all distributions*
+* **user**: *users related notes and scripts, working on all distributions*
 * **web**: *web related notes and scripts, working on all distributions*
 * **web-servers**: *web servers related notes and scripts*
