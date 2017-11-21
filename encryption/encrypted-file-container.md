@@ -67,7 +67,7 @@ chown -R $USER ~/myPrivData
 ### Unmount/close decrypted LUKS container
 
 ```bash
-umount ~/myPrivData && cryptsetup luksClose myVolume && rm -r ~/myPrivData
+umount ~/myPrivData && cryptsetup luksClose myVolume && rm -rf ~/myPrivData
 ```
 
 ### Quickly Access Container
