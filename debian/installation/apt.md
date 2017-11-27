@@ -23,5 +23,18 @@ apt-get update
 * Installation
 
 ```bash
-apt-get -t jessie-backports install <pacjagename>
+apt-get -t jessie-backports install <packagename>
 ```
+
+### Force Apt-Get to IPv4
+
+```bash
+sudoedit /etc/apt/apt.conf.d/99force-ipv4
+```
+
+* Append the following contents:
+
+```
+Acquire::ForceIPv4 "true";
+```
+
