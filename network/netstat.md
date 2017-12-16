@@ -1,3 +1,11 @@
+## Netstat
+
+### Incoming connections
+
+```bash
+netstat -vnpltu
+```
+
 ### Outbound connections
 
 ```bash
