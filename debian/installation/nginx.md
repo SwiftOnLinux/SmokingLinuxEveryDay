@@ -57,7 +57,7 @@ sudo php5enmod mcrypt
 sudo nano /var/lib/phpmyadmin/blowfish_secret.inc.php
 ```
 
-### Restart Apache2
+### Restart
 
 ```bash
 systemctl restart php7.0-fpm.service
