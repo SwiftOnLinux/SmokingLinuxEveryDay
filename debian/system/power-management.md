@@ -3,7 +3,7 @@
 ### pstate
 
 ```bash
-zgrep -i pstate /boot/config-4.14.0-2-amd64
+zgrep -i pstate /boot/config-$(uname -r)
 ```
 
 ### cpupower
