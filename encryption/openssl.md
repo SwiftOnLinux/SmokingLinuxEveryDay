@@ -1,8 +1,12 @@
+## OpenSSL Common Commands
+
 ### Generate self-signed Certificate and Key
 
 ```bash
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycert.crt
 ```
+
+---
 
 ### Generate a New Key
 
@@ -10,17 +14,36 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycer
 openssl genrsa -out server.key 2048
 ```
 
+### Generate a New Key (AES 256 CBC)
+
+```bash
+openssl genrsa -aes-256-cbc -out rootca.key 2048
+```
+
+### Generate a New Key (AES 256 CBC) and a random Passphrase
+
+```bash
+export PASSPHRASE=$(tr -dc 'a-zA-Z0-9!@#$%^&*:./?=+_[]{}()<>' < /dev/urandom | head -c 50)
+openssl genrsa -aes-256-cbc -out rootca.key -passout env:PASSPHRASE 2048
+```
+
+---
+
 ### Generate Certificate Signing Request in PKCS#10 format
 
 ```bash
 openssl req -new -key server.key -out server.req
 ```
 
+---
+
 ### Convert CER to ascii(crt)
 
 ```bash
 openssl x509 -inform DER -in subdomain.twelvesec.int.cer -out subdomain.twelvesec.int.crt
 ```
+
+---
 
 ### Generate a New CSR and Key
 
@@ -40,7 +63,7 @@ openssl req -nodes -new -newkey rsa:2048 -out subdomain.example.com.csr -keyout 
 openssl req -nodes -new -key <filename-key> -out <filename-csr>
 ```
 
-e.g. 
+e.g.
 
 ```bash
 openssl req -nodes -new -key subdomain.example.com.old.key -out subdomain.example.com.new.csr
@@ -52,11 +75,13 @@ openssl req -nodes -new -key subdomain.example.com.old.key -out subdomain.exampl
 openssl x509 -x509toreq -in <filename-crt> -signkey <filename-key> -out <filename-csr>
 ```
 
-e.g. 
+e.g.
 
 ```bash
 openssl x509 -x509toreq -in subdomain.example.com.old.crt -signkey subdomain.example.com.key -out subdomain.example.com.csr
 ```
+
+---
 
 ### Remove RSA private key PEM password
 
@@ -65,6 +90,8 @@ openssl rsa -in ~/.ssh/id_rsa -out ~/.ssh/id_rsa_2
 mv ~/.ssh/id_rsa_2 ~/.ssh/id_rsa
 chmod 0400 ~/.ssh/id_rsa
 ```
+
+---
 
 ### Create a CSR with SANs
 
@@ -122,6 +149,8 @@ subjectAltName = @alt_names
 DNS.1   = subdomain.example.com
 ```
 
+---
+
 ### Read a CSR
 
 ```bash
@@ -134,11 +163,13 @@ openssl req -text -noout -in <filename-csr>
 openssl x509 -text -noout -in <filename-crt>
 ```
 
-### Verify a CRT Matches a Private Key
+### Verify a CRT matches a Private Key
 
 ```bash
 openssl x509 -noout -modulus -in <filename-crt>
 ```
+
+---
 
 ### Client-side SSL
 
@@ -152,4 +183,4 @@ cp <user-name>.p12 /home/<user-name>/myfolder/
 chown <user-name>: /home/<user-name>/myfolder/<user-name>.p12
 ```
 
-
+---
