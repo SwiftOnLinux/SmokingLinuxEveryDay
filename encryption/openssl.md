@@ -32,7 +32,7 @@ openssl genrsa -aes-256-cbc -out rootca.key -passout env:PASSPHRASE 2048
 ### Generate Certificate Signing Request in PKCS#10 format
 
 ```bash
-openssl req -new -key server.key -out server.req
+openssl req -new -sha256 -key server.key -out server.req
 ```
 
 ---
@@ -96,7 +96,7 @@ chmod 0400 ~/.ssh/id_rsa
 ### Create a CSR with SANs
 
 ```bash
-openssl req -new -key subdomain.example.com.key -out subdomain.example.com.req -config myssl.cnf
+openssl req -new -sha256 -key subdomain.example.com.key -out subdomain.example.com.req -config myssl.cnf
 ```
 
 or
@@ -175,7 +175,7 @@ openssl x509 -noout -modulus -in <filename-crt>
 
 ```bash
 openssl genrsa -out <user-name>.key 2048
-openssl req -new -key <user-name>.key -out <user-name>.req
+openssl req -new -sha256 -key <user-name>.key -out <user-name>.req
 openssl x509 -req -in <user-name>.req -CA ca.cer -CAkey ca.key -set_serial 110 -extensions client -days 365 -outform PEM -out <user-name>.cer
 openssl pkcs12 -export -inkey <user-name>.key -in <user-name>.cer -out <user-name>.p12
 rm <user-name>.key <user-name>.cer <user-name>.req
