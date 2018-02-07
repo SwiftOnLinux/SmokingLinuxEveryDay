@@ -56,7 +56,15 @@ openssl req -new -sha256 -batch -subj "$(echo -n "$subj" | tr "\n" "/")" -key ro
 ### Generate CRT from CSR
 
 ```bash
-openssl req -x509 -days 365 -in rootca.csr -key rootca.key -out rootca.crt
+openssl x509 -req -sha256 -days 365 -in rootca.csr -signkey rootca.key -out rootca.crt
+```
+
+---
+
+### Sign CSR with ROOT CA
+
+```bash
+openssl x509 -req -sha256 -days 365 -in mycert.csr -CA rootca.crt -CAkey rootca.key -CAcreateserial -out mycert.crt
 ```
 
 ---
@@ -126,13 +134,13 @@ openssl req -new -sha256 -key subdomain.example.com.key -out subdomain.example.c
 or
 
 ```bash
-openssl req -config myssl.cnf -nodes -new -newkey rsa:<number of bits> -out <filename-csr> -keyout <filename-key>
+openssl req -new -sha256 -nodes -newkey rsa:<number of bits> -out <filename-csr> -keyout <filename-key> -config myssl.cnf
 ```
 
 e.g.
 
 ```bash
-openssl req -config myssl.conf -nodes -new -newkey rsa:4096 -out subdomain.example.com.csr -keyout subdomain.example.com.key
+openssl req -new -sha256 -nodes -newkey rsa:4096 -out subdomain.example.com.csr -keyout subdomain.example.com.key -config myssl.conf
 ```
 
 #### myssl.cnf Contents
