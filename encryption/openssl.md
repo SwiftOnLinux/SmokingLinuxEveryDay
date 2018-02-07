@@ -35,6 +35,30 @@ openssl genrsa -aes-256-cbc -out rootca.key -passout env:PASSPHRASE 2048
 openssl req -new -sha256 -key server.key -out server.req
 ```
 
+### Generate Certificate Signing Request
+
+```bash
+subj="
+C=$COUNTRY
+ST=$STATE
+L=$CITY
+O=$ORGANIZATION
+OU=$ORGANIZATION_UNIT
+CN=$COMMON_NAME
+emailAddress=$ADMIN_EMAIL
+"
+
+openssl req -new -sha256 -batch -subj "$(echo -n "$subj" | tr "\n" "/")" -key rootca.key -out rootca.csr -passin env:PASSPHRASE
+```
+
+---
+
+### Generate CRT from CSR
+
+```bash
+openssl req -x509 -days 365 -in rootca.csr -key rootca.key -out rootca.crt
+```
+
 ---
 
 ### Convert CER to ascii(crt)
@@ -72,13 +96,13 @@ openssl req -nodes -new -key subdomain.example.com.old.key -out subdomain.exampl
 ### Generate a New CSR from Existing CRT and Key
 
 ```bash
-openssl x509 -x509toreq -in <filename-crt> -signkey <filename-key> -out <filename-csr>
+openssl x509 -x509toreq -in <filename-crt> -key <filename-key> -out <filename-csr>
 ```
 
 e.g.
 
 ```bash
-openssl x509 -x509toreq -in subdomain.example.com.old.crt -signkey subdomain.example.com.key -out subdomain.example.com.csr
+openssl x509 -x509toreq -in subdomain.example.com.old.crt -key subdomain.example.com.key -out subdomain.example.com.csr
 ```
 
 ---
