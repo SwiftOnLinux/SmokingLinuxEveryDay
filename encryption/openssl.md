@@ -220,7 +220,7 @@ chown <user-name>: /home/<user-name>/myfolder/<user-name>.p12
 ### Sign files
 
 ```bash
-openssl dgst -sha256 -sign key -out sign.sha256 filename.txt
+openssl dgst -sha256 -sign mycert.key -out sign.sha256 filename.txt
 openssl base64 -in sign.sha256 -out sign.base64
 ```
 
@@ -229,6 +229,21 @@ openssl base64 -in sign.sha256 -out sign.base64
 ```bash
 openssl x509 -in cert.crt -pubkey -noout > cert.pub
 openssl dgst -sha256 -verify cert.pub -signature sign.sha256 filename.txt
+```
+
+---
+
+### Encrypt files
+
+```bash
+openssl rsa -in mycert.key -pubout -outform PEM -out publickey.pem
+openssl rsautl -encrypt -inkey publickey.pem -pubin -in filename.txt -out filename_encrypted.enc
+```
+
+### Decrypt files
+
+```bash
+openssl rsautl -decrypt -inkey mycert.key -in filename_encrypted.enc -out filename.txt
 ```
 
 ---
