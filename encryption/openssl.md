@@ -20,6 +20,12 @@ openssl genrsa -out server.key 2048
 openssl genrsa -aes-256-cbc -out rootca.key 2048
 ```
 
+### Generate a New Key (ECC-256)
+
+```bash
+openssl ecparam -genkey -name secp256k1 -out rootca.key
+```
+
 ### Generate a New Key (AES 256 CBC) and a random Passphrase
 
 ```bash
