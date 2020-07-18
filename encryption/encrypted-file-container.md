@@ -24,30 +24,18 @@ dd if=/dev/zero of=mycontainer.img bs=1M count=0 seek=1G
 dd if=/dev/urandom of=master.key bs=4096 count=1
 ```
 
-### Encrypting disk image file
+### Encrypt the container
 
 ```bash
-cryptsetup -y luksFormat mycontainer.img
+sudo cryptsetup -y -c aes-xts-plain64 -s 512 -h sha512 -i 5000 --use-random luksFormat mycontainer.img master.key
 ```
 
-or
+### Unlock the container
+
+* creates a device file at /dev/mapper/myVolume
 
 ```bash
-cryptsetup luksFormat -d mykey.key mycontainer.img
-```
-
-### Unlock/Open LUKS encrypted container
-
-* creates a device file with the name /dev/mapper/myVolume
-
-```bash
-cryptsetup luksOpen mycontainer.img myVolume
-```
-
-or
-
-```bash
-cryptsetup luksOpen mycontainer.img -d mykey.key myVolume
+sudo cryptsetup luksOpen mycontainer.img myVolume --key-file master.key
 ```
 
 ### Create an ext4 filesystem on the decrypted LUKS container
