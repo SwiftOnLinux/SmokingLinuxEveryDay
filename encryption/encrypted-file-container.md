@@ -38,18 +38,18 @@ sudo cryptsetup -y -c aes-xts-plain64 -s 512 -h sha512 -i 5000 --use-random luks
 sudo cryptsetup luksOpen mycontainer.img myVolume --key-file master.key
 ```
 
-### Create an ext4 filesystem on the decrypted LUKS container
+### Format the unlocked Volume with ext4 filesystem
 
 ```bash
-mkfs.ext4 /dev/mapper/myVolume
+sudo mkfs.ext4 /dev/mapper/myVolume
 ```
 
-### Mount the device
+### Mount the unlocked volume just like a regular disk to a local directory
 
 ```bash
-mkdir ~/myPrivData
-mount /dev/mapper/myVolume ~/myPrivData
-chown -R $USER ~/myPrivData
+mkdir ~/myPrivateData
+mount /dev/mapper/myVolume ~/myPrivateData
+chown -R $USER ~/myPrivateData
 ```
 
 ### Unmount/close decrypted LUKS container
