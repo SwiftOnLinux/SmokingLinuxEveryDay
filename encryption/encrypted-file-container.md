@@ -48,25 +48,20 @@ sudo mkfs.ext4 /dev/mapper/myVolume
 
 ```bash
 mkdir ~/myPrivateData
-mount /dev/mapper/myVolume ~/myPrivateData
-chown -R $USER ~/myPrivateData
+sudo mount /dev/mapper/myVolume ~/myPrivateData
+sudo chown -R "$USER":"$USER" ~/myPrivateData
 ```
 
-### Unmount/close decrypted LUKS container
+### Lock the container
 
 ```bash
-umount ~/myPrivData && cryptsetup luksClose myVolume && rm -rf ~/myPrivData
+umount ~/myPrivData && cryptsetup luksClose myVolume
 ```
 
-### Quickly Access Container
+### Quickly access your container
 
 ```bash
-cryptsetup luksOpen mycontainer.img myVolume && mkdir ~/myPrivData && mount /dev/mapper/myVolume ~/myPrivData
-```
-
-or
-
-```bash
-cryptsetup luksOpen mycontainer2.img -d mykey.key myVolume && mkdir ~/myPrivData && mount /dev/mapper/myVolume ~/myPrivData
+sudo cryptsetup luksOpen mycontainer.img myVolume --key-file master.key
+sudo mount /dev/mapper/myVolume ~/myPrivateData
 ```
 
