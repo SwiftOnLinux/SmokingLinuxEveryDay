@@ -6,7 +6,7 @@
 sudo apt install cryptsetup
 ```
 
-### Create an empty file e.g. 1GB
+### Create an empty container e.g. 1GB
 
 ```bash
 fallocate -l 1GB mycontainer.img
