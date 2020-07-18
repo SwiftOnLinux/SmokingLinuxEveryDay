@@ -3,7 +3,7 @@
 ### Installations
 
 ```bash
-apt-get install cryptsetup
+sudo apt install cryptsetup
 ```
 
 ### Create an empty file with the size of your container
