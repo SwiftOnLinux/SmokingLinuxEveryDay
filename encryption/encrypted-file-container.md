@@ -55,7 +55,7 @@ sudo chown -R "$USER":"$USER" ~/myPrivateData
 ### Lock the container
 
 ```bash
-umount ~/myPrivData && cryptsetup luksClose myVolume
+sudo umount ~/myPrivateData && sudo cryptsetup luksClose myVolume
 ```
 
 ### Quickly access your container
