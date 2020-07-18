@@ -18,10 +18,10 @@ or
 dd if=/dev/zero of=mycontainer.img bs=1M count=0 seek=1G 
 ```
 
-### Using a keyfile
+### Generate a random 4096 master key to unlock the container
 
 ```bash
-dd if=/dev/urandom of=mykey.key bs=1024 count=1
+dd if=/dev/urandom of=master.key bs=4096 count=1
 ```
 
 ### Encrypting disk image file
