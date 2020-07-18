@@ -6,16 +6,16 @@
 sudo apt install cryptsetup
 ```
 
-### Create an empty file with the size of your container
+### Create an empty file e.g. 1GB
 
 ```bash
-fallocate -l 100M mycontainer.img
+fallocate -l 1GB mycontainer.img
 ```
 
 or
 
 ```bash
-dd if=/dev/urandom of=mycontainer.img bs=1M count=100
+dd if=/dev/zero of=mycontainer.img bs=1M count=0 seek=1G 
 ```
 
 ### Using a keyfile
